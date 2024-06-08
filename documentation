@@ -1,0 +1,48 @@
+Bingham Bank Account System
+This Python code defines a banking system for Bingham Bank with various types of accounts using object-oriented programming principles. The classes use inheritance, polymorphism, and encapsulation.
+
+Classes
+Account
+The base class for all account types. It defines common attributes and methods.
+
+Attributes
+account_number (str): The account number.
+account_holder (str): The name of the account holder.
+balance (float): The balance of the account. Defaults to 0.
+_interest_rate (float): The interest rate for the account. Defaults to 0.
+Methods
+__init__(self, account_number, account_holder, balance=0): Initializes an account with the provided details.
+deposit(self, amount): Deposits the specified amount into the account.
+withdraw(self, amount): Withdraws the specified amount from the account.
+add_interest(self): Adds interest to the account balance based on the interest rate.
+get_balance(self): Returns the current balance of the account.
+get_account_details(self): Returns the account details as a dictionary.
+SavingsAccount
+Inherits from Account. It adds specific behavior for savings accounts.
+
+Attributes
+_interest_rate (float): Interest rate of 0.5% (0.005).
+_withdrawal_limit (int): Withdrawal limit of 700,000.
+Methods
+deposit(self, amount): Deposits the specified amount and adds interest.
+withdraw(self, amount): Withdraws the specified amount, enforcing the withdrawal limit.
+CurrentAccount
+Inherits from Account. It represents a current account with no restrictions on deposits or withdrawals.
+
+ChildrenAccount
+Inherits from Account. It represents a children's account with specific behavior.
+
+Attributes
+_interest_rate (float): Interest rate of 0.7% (0.007).
+Methods
+deposit(self, amount): Deposits the specified amount and adds interest.
+withdraw(self, amount): Disallows any withdrawals.
+StudentAccount
+Inherits from Account. It represents a student account with specific deposit and withdrawal limits.
+
+Attributes
+_withdrawal_limit (int): Withdrawal limit of 2,000.
+_deposit_limit (int): Deposit limit of 50,000 per deposit.
+Methods
+deposit(self, amount): Deposits the specified amount, enforcing the deposit limit.
+withdraw(self, amount): Withdraws the specified amount, enforcing the withdrawal limit.
